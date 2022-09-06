@@ -24,8 +24,8 @@ while guess_word != mystery_word and i + 1 <= len(mystery_word):
         # green box prints when a letter is in the correct spot
     else:
         index_tracker: int = 0
-        getting_warmer: bool = False 
-        while getting_warmer == False and index_tracker + 1 <= len(mystery_word):
+        getting_warmer = False 
+        while not getting_warmer and index_tracker + 1 <= len(mystery_word):
             if guess_word[i] == mystery_word[index_tracker]:
                 getting_warmer = True
                 index_tracker = index_tracker + 1
