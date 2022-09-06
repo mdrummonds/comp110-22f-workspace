@@ -1,5 +1,5 @@
 """EX02 - One-Shot Wordle - Loops!"""
-__author__= "730482673"
+__author__ = "730482673"
 
 mystery_word: str = "python"
 # can be changed to any word of any length, initial word the user is trying to guess.
@@ -14,20 +14,20 @@ guess_word: str = input(f"What is your { len(mystery_word) }-letter guess?")
 
 while len(guess_word) != len(mystery_word):
     print(f"That was not {len(mystery_word)} letters! Try again:")
-    guess_word: str = input("")
+    guess_word = input("")
 # If the user does not insert the correct amount of letters, they can try again until they place the correct amount
 
 while guess_word != mystery_word and i + 1 <= len(mystery_word):
     if guess_word[i] == mystery_word[i]:
-        getting_warmer: bool = True
+        getting_warmer = True
         hint = hint + GREEN_BOX
         # green box prints when a letter is in the correct spot
     else:
         index_tracker: int = 0
         getting_warmer: bool = False 
-        while getting_warmer != True and index_tracker + 1 <= len(mystery_word):
+        while getting_warmer == False and index_tracker + 1 <= len(mystery_word):
             if guess_word[i] == mystery_word[index_tracker]:
-                getting_warmer: bool = True
+                getting_warmer = True
                 index_tracker = index_tracker + 1
             else: 
                 index_tracker = index_tracker + 1
