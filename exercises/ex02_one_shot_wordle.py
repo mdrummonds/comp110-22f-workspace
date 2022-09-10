@@ -1,7 +1,7 @@
 """EX02 - One-Shot Wordle - Loops!"""
 __author__ = "730482673"
 
-mystery_word: str = "python"
+mystery_word: str = "panda"
 # can be changed to any word of any length, initial word the user is trying to guess.
 WHITE_BOX: str = "\U00002B1C"
 GREEN_BOX: str = "\U0001F7E9"
