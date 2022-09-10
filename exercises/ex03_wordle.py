@@ -41,6 +41,7 @@ def input_guess(secret: int) -> int:
         guess_word = input(f"That wasn't {secret} chars! Try again:")
     else:
         return guess_word
+# Ensures word is correct length
 
 def main() -> None:
     """The entrypoint of the program and main game loop."""
