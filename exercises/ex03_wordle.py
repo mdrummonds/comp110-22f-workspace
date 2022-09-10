@@ -17,6 +17,7 @@ def contains_char(word_search: str, character: str) -> bool:
             return True
     return False
             
+
 def emojified(guess_word: str, secret: str) -> str:
     """Returns colored boxes depending on the correctedness of the character."""
     assert len(guess_word) == len(secret)
@@ -39,11 +40,12 @@ def emojified(guess_word: str, secret: str) -> str:
 
 def input_guess(length: int) -> int:
     """Prompt for a guess of the correct length."""
-    guess_word: str = input(f"Enter a {length} word:")
+    guess_word: str = input(f"Enter a {length} character word: ")
     while len(guess_word) != length:
-        guess_word = input(f"That wasn't {length} chars! Try again:")
-    else:
+        guess_word = input(f"That wasn't {length} chars! Try again: ")
+    if len(guess_word):
         return guess_word
+    
 # Ensures word is correct length
 
 
@@ -52,22 +54,18 @@ def main() -> None:
     turn_number: int = 1
     secret: str = "codes"
     guess_word: str = ""
-    print(f"=== Turn {turn_number}/6 ===")
-    guess_word = input(f"Enter a {len(secret)} word: ")
-    print(emojified(guess_word, secret))
     # imported emojified function for boxes
     while turn_number < len(secret) + 1:
+        print(f"=== Turn {turn_number}/6 ===")
+        input_guess(len(secret))
         if guess_word != secret: 
             turn_number += 1
-            print(f"=== Turn {turn_number}/6 ===")
-            guess_word = input(f"Enter a {len(secret)} word: ")
             print(emojified(guess_word, secret))
         elif guess_word == secret:
             print(emojified(guess_word, secret))
-            print(f"You won in {turn_number}/6 turns!")
-            exit()
+            exit((f"You won in {turn_number}/6 turns!"))
     else:
-        print("X/6 - Sorry, try again tomorrow!")
+        exit("X/6 - Sorry, try again tomorrow!")
 
 
 if __name__ == "__main__":
