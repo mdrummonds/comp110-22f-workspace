@@ -37,15 +37,14 @@ def emojified(guess_word: str, secret: str) -> str:
         index += 1
     return hint
 
-
 def input_guess(length: int) -> int:
     """Prompt for a guess of the correct length."""
     guess_word: str = input(f"Enter a {length} character word: ")
     while len(guess_word) != length:
         guess_word = input(f"That wasn't {length} chars! Try again: ")
-    if len(guess_word):
+    else:
         return guess_word
-    
+
 # Ensures word is correct length
 
 
@@ -57,7 +56,7 @@ def main() -> None:
     # imported emojified function for boxes
     while turn_number < len(secret) + 1:
         print(f"=== Turn {turn_number}/6 ===")
-        input_guess(len(secret))
+        guess_word = input_guess(len(secret))
         if guess_word != secret: 
             turn_number += 1
             print(emojified(guess_word, secret))
