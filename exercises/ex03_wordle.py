@@ -37,6 +37,7 @@ def emojified(guess_word: str, secret: str) -> str:
         index += 1
     return hint
 
+
 def input_guess(length: int) -> int:
     """Prompt for a guess of the correct length."""
     guess_word: str = input(f"Enter a {length} character word: ")
@@ -62,9 +63,9 @@ def main() -> None:
             print(emojified(guess_word, secret))
         elif guess_word == secret:
             print(emojified(guess_word, secret))
-            exit((f"You won in {turn_number}/6 turns!"))
+            return print((f"You won in {turn_number}/6 turns!"))
     else:
-        exit("X/6 - Sorry, try again tomorrow!")
+        return print("X/6 - Sorry, try again tomorrow!")
 
 
 if __name__ == "__main__":
