@@ -7,7 +7,7 @@ def all(list: list[int], number: int) -> bool:
     i: int = 0
     if len(list) == 0:
         return False
-    while  i + 1 < len(list):
+    while i + 1 < len(list):
         if number == list[i]:
             i += 1
         else:
@@ -30,8 +30,6 @@ def max(input: list[int]) -> int:
 
 def is_equal(first_values: list[int], second_values: list[int]) -> bool:
     """Evaluates whether two lists are completely equal to each other."""
-    if len(first_values) == 0 or len(second_values) == 0:
-        return False
     i: int = 0
     if len(first_values) != len(second_values):
         return False
