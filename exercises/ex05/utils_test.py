@@ -36,12 +36,12 @@ def test_concat_randoms_nums() -> None:
     """Tests when given two regular lists."""
     first_list: list[int] = [1, 2, 3]
     second_list: list[int] = [1, 2, 3]
-    assert concat(first_list,second_list) == [1, 2, 3, 1, 2, 3]
+    assert concat(first_list, second_list) == [1, 2, 3, 1, 2, 3]
 
 
 def test_concat_negative_nums() -> None:
     """Tests when given two lists with negative numbers."""
-    first_list: list[int] = [-1, -2 , -3]
+    first_list: list[int] = [-1, -2, -3]
     second_list: list[int] = [-3, -2, -1]
     assert concat(first_list, second_list) == [-1, -2, -3, -3, -2, -1]
 

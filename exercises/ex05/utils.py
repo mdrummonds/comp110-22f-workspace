@@ -2,6 +2,7 @@
 
 __author__ = "730482673"
 
+
 def only_evens(odds_and_evens: list[int]) -> list[int]:
     """Returns even numbers given in a list."""
     i: int = 0
@@ -29,7 +30,6 @@ def concat(first_list: list[int], second_list: list[int]) -> list[int]:
 
 def sub(input_list: list[int], start_index: int, end_index: int) -> list[int]:
     """A subset of the given list between the specified start and end values."""
-    i: int = start_index
     new_list: list[int] = []
     if start_index < 0:
         start_index = 0
@@ -41,16 +41,3 @@ def sub(input_list: list[int], start_index: int, end_index: int) -> list[int]:
         new_list.append(input_list[start_index])
         start_index += 1
     return new_list
-
-
-    
-
-
-
-            
-
-       
-    
-
-
-
