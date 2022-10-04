@@ -52,7 +52,7 @@ def input_guess(length: int) -> str:
 def main() -> None:
     """The entrypoint of the program and main game loop."""
     turn_number: int = 1
-    secret: str = "turtle"
+    secret: str = "Butter"
     guess_word: str = ""
     # imported emojified function for boxes
     while turn_number <= len(secret) + 1:
