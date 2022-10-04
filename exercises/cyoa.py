@@ -10,10 +10,11 @@ player: str = ""
 points: int = 0
 
 
-def greet()-> None: 
+def greet() -> None: 
     """Greets the player and prompts for a name."""
     global player
-    player = input("Welcome to speed dating! What is your name?" )
+    print("Welcome to speed dating!")
+    player = input("What is your name?")
 
 
 def first_choice() -> int:
@@ -24,9 +25,9 @@ def first_choice() -> int:
 
 
 def second_choice(first_decision: int) -> int:
-    """"Player makes second decision based on first decision and is given three new choices."""
+    """Player makes second decision based on first decision and is given three new choices."""
     global points
-    if first_decision ==1:
+    if first_decision == 1:
         points += 5
         print(f"Great choice, {player}. You now have {points} love points")
         decision_2: int = int(input("Should you talk about your obsession with cats (1), discuss your love for computer science (2), or insult Simon's outfit (3)? Type the corresponding number."))
@@ -61,13 +62,13 @@ def num_return_negative(love_points: int) -> int:
     return love_points
 
 
-def main()-> None:
+def main() -> None:
     """The main entrypoint of the speed dating program."""
     global points
     global player
     speedy: bool = True 
     greet()
-    while speedy == True:
+    while speedy:
         decision: int = first_choice()
         if decision == 1:
             decision_2: int = second_choice(decision)
