@@ -34,7 +34,7 @@ def second_choice(first_decision: int) -> int:
     if first_decision == 2:
         points += 5
         print(f"Interesting decision {player}. You now have {points} love points")
-        decision_2: int = int(input("Should you talk about National Geographic's shark week (1), your favorite episode of spongebob (2), or ask about Callie's day (3)?"))
+        decision_2 = int(input("Should you talk about National Geographic's shark week (1), your favorite episode of spongebob (2), or ask about Callie's day (3)?"))
     return decision_2
 
 
@@ -84,7 +84,7 @@ def main() -> None:
             else: 
                 print("That wasn't an option.")
         if decision == 2:
-            decision_2: int = second_choice(decision)
+            decision_2 = second_choice(decision)
             if decision_2 == 1:
                 print("Bad choice, Callie is scared of sharks. She left the date crying.")
                 points = num_return_negative(points)
