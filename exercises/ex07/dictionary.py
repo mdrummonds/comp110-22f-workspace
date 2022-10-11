@@ -13,13 +13,13 @@ def invert(a: dict[str, str]) -> dict[str, str]:
     return reverse
 
 
-def favorite_color(colors: dict[str,str]) -> str:
+def favorite_color(colors: dict[str, str]) -> str:
     """Reports the value with the greatest frequency in a list."""
     color_list: list[str] = []
-    empty: dict[str,int] = {}
+    empty: dict[str, int] = {}
     nums_list: list[int] = []
     for rainbow in colors:
-        color_list.insert(rainbow)
+        color_list.append(rainbow)
     empty = count(color_list)
     for num in empty:
         nums_list.append(empty[num])
@@ -32,7 +32,7 @@ def favorite_color(colors: dict[str,str]) -> str:
 
 def count(x: list[str]) -> dict[str, int]:
     """Given a list, reports a dictionary with the key as the value and the value as the number of times that value appeared in the list."""
-    empty: dict[str,int] = {}
+    empty: dict[str, int] = {}
     for key in x:
         if key in empty:
             empty[key] += 1
