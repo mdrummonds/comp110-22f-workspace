@@ -18,15 +18,13 @@ def favorite_color(colors: dict[str,str]) -> str:
     color_list: list[str] = []
     empty: dict[str,int] = {}
     nums_list: list[int] = []
-    if len(colors) == 0:
-        return {}
     for rainbow in colors:
-        color_list.append(rainbow)
+        color_list.insert(rainbow)
     empty = count(color_list)
     for num in empty:
         nums_list.append(empty[num])
     max_number: int = max(nums_list)
-    reverse: dict[str, str] = {}
+    reverse: dict[int, str] = {}
     for key in empty:
         reverse[empty[key]] = key
     return colors[reverse[max_number]]
