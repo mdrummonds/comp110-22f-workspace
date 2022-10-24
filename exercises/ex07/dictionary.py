@@ -20,14 +20,13 @@ def favorite_color(colors: dict[str, str]) -> str:
     nums_list: list[int] = []
     for rainbow in colors:
         color_list.append(rainbow)
-    empty = count(color_list)
-    for num in empty:
-        nums_list.append(empty[num])
-    max_number: int = max(nums_list)
     reverse: dict[int, str] = {}
     for key in empty:
         reverse[empty[key]] = key
-    return colors[reverse[max_number]]
+    empty = count(color_list)
+    for num in reverse:
+        nums_list.append(num)
+    return [reverse[max(nums_list)]]
         
 
 def count(x: list[str]) -> dict[str, int]:
@@ -39,3 +38,6 @@ def count(x: list[str]) -> dict[str, int]:
         else:
             empty[key] = 1
     return empty
+
+
+print(favorite_color({"T": "blue", "A": "red", "L": "green", "M": "blue", "E": "green"}))
